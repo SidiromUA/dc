@@ -1,0 +1,19 @@
+<%= link_to 'Додати тварину', new_animal_path %>
+
+<table>
+  <tr>
+    <th>Кличка</th>
+    <th>Фото</th>
+    <th>Фото</th>
+    <th colspan="4"></th>
+  </tr>
+
+  <% @animals.each do |animal| %>
+    <tr>
+      <td><%= animal.title %></td>
+      <td><%= animal.avatar.attach(params[:avatar]) %></td>  
+      <td><%= image_tag(animal.avatar) %></td>
+    </tr>
+  <% end %>
+</table>
+

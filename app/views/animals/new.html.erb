@@ -1,0 +1,20 @@
+<%= form_with scope: :animal, url: animals_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :kind %><br>
+    <%= form.select :kind, Animal.kinds.keys %>
+  </p>
+
+  <p>
+    <%= form.label "Animal Photo" %>
+    <%= form.file_field :avatar %><br>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

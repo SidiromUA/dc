@@ -1,0 +1,16 @@
+<p>
+  <strong>Title:</strong>
+  <%= @animal.title %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @animal.kind %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @animal.avatar.attached? %>
+    <image src="<%=(url_for(@animal.avatar))%>">
+  <% end %>
+</p>
