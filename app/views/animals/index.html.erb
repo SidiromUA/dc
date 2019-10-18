@@ -1,36 +1,20 @@
 <%= stylesheet_link_tag "animals" %>
 
-
-
-
-<body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title"><%= link_to 'Додати тварину', new_animal_path %></h1>
-      <h2 class="subtitle">
-      <br>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
+<h1 class="title"><%= link_to 'Додати тварину', new_animal_path %></h1>
+<br>
+<div class="row">
   <% @animals.each do |animal| %>
-    <tr>
-      <td><%= animal.title %></td>
-      <td>
+    <div class='column'>
+      <div><%= link_to 'Видалити', animal_path(animal), class: 'delete',
+              method: :delete,
+              data: { confirm: 'Ви впевнені?' } %>
+      </div>
+      <div>
         <% if animal.avatar.attached? %>
           <%= image_tag(animal.avatar, :size => "128x128", class: 'image is-128x128') %>
         <% end %>
-      </td>
-      <td><%= link_to 'Видалити', animal_path(animal), class: 'delete',
-              method: :delete,
-              data: { confirm: 'Ви впевнені?' } %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-      </h2>
+      </div>
+      <div class="animal-name"><%= animal.title %></div>
     </div>
-  </section>
-</body>
+  <% end %>
+</div>
