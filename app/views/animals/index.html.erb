@@ -1,19 +1,18 @@
 <%= link_to 'Додати тварину', new_animal_path %>
-
+<br>
 <table>
-  <tr>
-    <th>Кличка</th>
-    <th>Фото</th>
-    <th>Фото</th>
-    <th colspan="4"></th>
-  </tr>
-
   <% @animals.each do |animal| %>
     <tr>
       <td><%= animal.title %></td>
-      <td><%= animal.avatar.attach(params[:avatar]) %></td>  
-      <td><%= image_tag(animal.avatar) %></td>
+      <td>
+        <% if animal.avatar.attached? %>
+          <%= image_tag(animal.avatar, :size => "100x100") %>
+        <% end %>
+      </td>
+      <td><%= link_to 'Видалити', animal_path(animal),
+              method: :delete,
+              data: { confirm: 'Ви впевнені?' } %>
+      </td>
     </tr>
   <% end %>
 </table>
-

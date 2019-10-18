@@ -1,6 +1,6 @@
 class Animal < ApplicationRecord
   has_one_attached :avatar
 
-  enum kind: %i[cat dog]
+  enum kind: %i[Кіт Собака]
 end
 

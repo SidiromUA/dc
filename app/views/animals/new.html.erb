@@ -1,16 +1,17 @@
+<h3>Додати друга</h3>
 <%= form_with scope: :animal, url: animals_path, local: true do |form| %>
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :kind %><br>
+    <%= form.label "Хто шукає дім?" %><br>
     <%= form.select :kind, Animal.kinds.keys %>
   </p>
 
   <p>
-    <%= form.label "Animal Photo" %>
+    <%= form.label "Кличка" %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label "Додати фото" %>
     <%= form.file_field :avatar %><br>
   </p>
 

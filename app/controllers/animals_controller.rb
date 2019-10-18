@@ -4,36 +4,22 @@ class AnimalsController < ApplicationController
     @animals = Animal.all
   end
 
-  def show
-    @animal = Animal.find(params[:id])
-  end
-
   def new
     @animal = Animal.new
   end
 
-  def edit
-    @animal = Animal.find(params[:id])
-  end
-
   def create
     @animal = Animal.new(animal_params)
-
+    #@animal.avatar.attach(params[:avatar])
     if @animal.save
-      redirect_to @animal
+      redirect_to root_path
     else
       render 'new'
     end
   end
 
-  def update
+  def show
     @animal = Animal.find(params[:id])
-
-    if @animal.update(animal_params)
-      redirect_to @animal
-    else
-      render 'edit'
-    end
   end
 
   def destroy
