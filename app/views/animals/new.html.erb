@@ -1,21 +1,24 @@
-<h3>Додати друга</h3>
+<%= stylesheet_link_tag "animals" %>
+
+<div class="container" align="center">
+  <div class="notification">
+<h4 class="subtitle is-4">Додати друга</h4>
+
 <%= form_with scope: :animal, url: animals_path, local: true do |form| %>
-  <p>
-    <%= form.label "Хто шукає дім?" %><br>
-    <%= form.select :kind, Animal.kinds.keys %>
-  </p>
-
-  <p>
-    <%= form.label "Кличка" %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label "Додати фото" %>
-    <%= form.file_field :avatar %><br>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+    <%= form.label "Хто шукає дім:", class: 'subtitle is-6' %>
+<br>
+  <div>
+    <%= form.select :kind, Animal.kinds.keys, {}, {class: "field control select"} %>
+  </div>
+  <div>
+    <%= form.label "Кличка", class: "subtitle is-6" %>
+    <br>
+    <%= form.text_field :title, class: "input" %>
+  </div>
+    <br>
+    <%= form.file_field :avatar %>
+  <br>
+    <%= form.submit "Додати", class: 'control button is-primary' %>
 <% end %>
+  </div>
+</div>

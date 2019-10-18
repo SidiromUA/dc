@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+$family-primary:'Ubuntu', sans-serif;
+@import 'bulma/bulma';
+@import "bulma-extensions";
+
+.container{
+  width:25%;
+  height:100%;
+  position:center;
+  background:#ffffff;
+  top:0;
+  left:0;
+}
+
+.input, .field.control.select{
+  width:80%;
+  background:#ffffff;
+}
+
+
+

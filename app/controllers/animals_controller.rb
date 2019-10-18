@@ -10,7 +10,6 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    #@animal.avatar.attach(params[:avatar])
     if @animal.save
       redirect_to root_path
     else
