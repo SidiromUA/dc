@@ -2,26 +2,20 @@
 
 <div class="container" align="center">
   <div class="notification">
-<h4 class="subtitle is-4">Додати друга</h4>
-
-<%= form_with scope: :animal, url: animals_path, local: true do |form| %>
+    <h4 class="subtitle is-4">Додати друга</h4>
+    <%= form_with scope: :animal, url: animals_path, local: true do |form| %>
     <%= form.label "Хто шукає дім:", class: 'subtitle is-6' %>
-<br>
-  <div>
+    <br>
     <%= form.select :kind, Animal.kinds.keys, {}, {class: "field control select"} %>
-  </div>
-  <div>
     <%= form.label "Кличка", class: "subtitle is-6" %>
-  <br>
     <%= form.text_field :title, class: "input" %>
-  </div>
-  <br>
-  <%= form.file_field :avatar %>
-  <br>
-  <div class="button-group">
-    <%= form.submit "Додати", class: 'control button is-primary' %>
-    <%= link_to 'Back', animals_path, class: 'button is-info' %>
-  </div>
-<% end %>
+    <br>
+    <%= form.file_field :avatar %>
+    <br>
+    <div class="button-group">
+      <%= form.submit "Додати", class: 'control button is-primary' %>
+      <%= link_to 'Back', animals_path, class: 'button is-info' %>
+    </div>
+    <% end %>
   </div>
 </div>

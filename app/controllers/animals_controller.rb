@@ -1,5 +1,6 @@
-class AnimalsController < ApplicationController
+# frozen_string_literal: true
 
+class AnimalsController < ApplicationController
   def index
     @animals = Animal.all
   end
