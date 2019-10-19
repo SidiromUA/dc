@@ -12,13 +12,31 @@
   </div>
   <div>
     <%= form.label "Кличка", class: "subtitle is-6" %>
-    <br>
+  <br>
     <%= form.text_field :title, class: "input" %>
   </div>
-    <br>
-    <%= form.file_field :avatar %>
   <br>
+    <div class="file has-name">
+  <label class="file-label">
+  <%= form.file_field :avatar, class:"file-input" %>
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        Вибрати фото
+      </span>
+    </span>
+    <span class="file-name">
+      ХЄРНЯ
+    </span>
+  </label>
+</div>
+  <br>
+  <div class="button-group">
     <%= form.submit "Додати", class: 'control button is-primary' %>
+    <%= link_to 'Back', animals_path, class: 'button is-info' %>
+  </div>
 <% end %>
   </div>
 </div>

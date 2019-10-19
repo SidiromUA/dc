@@ -3,7 +3,7 @@ $family-primary:'Ubuntu', sans-serif;
 @import 'bulma/bulma';
 @import "bulma-extensions";
 
-.container{
+.container {
   width:25%;
   height:100%;
   position:center;
@@ -12,7 +12,7 @@ $family-primary:'Ubuntu', sans-serif;
   left:0;
 }
 
-.input, .field.control.select{
+.input, .field.control.select {
   width:80%;
   background:#ffffff;
 }
